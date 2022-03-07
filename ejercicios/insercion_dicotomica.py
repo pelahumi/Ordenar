@@ -18,7 +18,9 @@ class Insercion():
             self.new_array.append(min(self.array))
             self.index += 1
             self.ordenar()
+            
         else:
             
+
 
         
