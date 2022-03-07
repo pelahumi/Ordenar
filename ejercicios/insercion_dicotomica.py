@@ -14,6 +14,11 @@ class Insercion():
     #Definimos el método de la clase que nos ordenará el array
 
     def ordenar(self):
-        if  
+        if  min(self.array) <= self.minimo:
+            self.new_array.append(min(self.array))
+            self.index += 1
+            self.ordenar()
+        else:
+            
 
         
