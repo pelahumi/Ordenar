@@ -3,32 +3,42 @@
 class Topologica():
     pass #ponemos un pass porque definiremos luego los atributos de la clase
 
-    #Definimos el constructor con los atributos de la clase
+    #Definimos el constructor
+    def __init__(self, vertices):
+        self.vertices = vertices
+        self.tarea = []
 
-    def __init__(self, array):
-        self.array = array
-        self.new_array = []
-        self.index = 0
-    
-    #Definimos el método de la clase que nos ordenará el array
+    def añadir(self,vertice, importancia):
+        self.tarea[vertice].append(importancia)
 
-    def ordenar(self):
+    def ordenar(self, v, lista, resultado):
+        lista.append(v)
+
+        for i in self.vertices[v]:
+            if i not in lista:
+                self.ordenar(i, lista, resultado)
         
-        minimo = min(array)
+        resultado.insert(0, v)
 
-        if self.index <= len(self.array):
-            self.new_array.append(minimo)
-            array.remove(minimo)
-            self.ordenar()
-        else:
-            return "El array ordenado es: {}".format(self.new_array)
+    def ordenacion_topologica(self):
+        lista = []
+        resultado = []
+
+        for j in list(self.vertices):
+            if j not in lista:
+                self.ordenar(j, lista, resultado)
+        
+        return "El resultado es: {}".format(resultado)
 
 if __name__ == "__main__":
-    array = [13, 56, 77, 2, 27, 89, 71, 19, 33]
-    print(min(array))
-    #Creamos el objeto
-    lista = Topologica(array)
-    print(lista.ordenar())
+    tarea = Topologica(5)
+    tarea.añadir(0, 3)
+    tarea.añadir(2, 1)
+    tarea.añadir(4, 1)
+    tarea.añadir(2, 3)
+    tarea.añadir(0, 2)
+
+    tarea.ordenacion_topologica()
 
             
 
