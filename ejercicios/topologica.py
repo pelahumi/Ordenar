@@ -1,32 +1,36 @@
 #Creamos la clase
 
 class Topologica():
-    pass #Ponemos un pass porque definiremos los atributos más adelante
+    pass #ponemos un pass porque definiremos luego los atributos de la clase
 
-    #Creamos el constructor, con los atributos de la clase
+    #Definimos el constructor con los atributos de la clase
+
     def __init__(self, array):
         self.array = array
-
-    #Creamos el método para ordenar nuestro array
-    def ordenar(self):
-        #Este bucle recorre los elementos del array empezando por el segundo elemento
-        for i in range(1, len(self.array)):
-            num = self.array[i]
-            index = i - 1 #Con este índice llamaremos a los elementos anteriores a num
-            #En este bucle comparamos los elementos anteriores a num y si son mas grandes los intercambiamos
-            while index >= 0 and num < self.array[index]:
-                self.array[index + 1] = self.array[index]
-                index -= 1
-            self.array[index + 1] = num
-        return "La lista ordenada: {}".format(self.array)
+        self.new_array = []
+        self.index = 0
     
+    #Definimos el método de la clase que nos ordenará el array
+
+    def ordenar(self):
+        
+        minimo = min(array)
+
+        if self.index <= len(self.array):
+            self.new_array.append(minimo)
+            array.remove(minimo)
+            self.ordenar()
+        else:
+            return "El array ordenado es: {}".format(self.new_array)
+
 if __name__ == "__main__":
     array = [13, 56, 77, 2, 27, 89, 71, 19, 33]
-    print(array)
-    lista_ordenar = Topologica(array) #Creamos nuestro objeto
-    print(lista_ordenar.ordenar())
+    print(min(array))
+    #Creamos el objeto
+    lista = Topologica(array)
+    print(lista.ordenar())
+
+            
 
 
-
-
-
+        
