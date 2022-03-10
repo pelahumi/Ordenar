@@ -8,7 +8,7 @@ class Topologica():
         self.vertices = vertices
         self.tarea = []
 
-    def añadir(self,vertice, importancia):
+    def añadir(self, vertice, importancia):
         self.tarea[vertice].append(importancia)
 
     def ordenar(self, v, lista, resultado):
