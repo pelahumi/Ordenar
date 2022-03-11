@@ -1,5 +1,5 @@
-from ejercicios.insercion_dicotomica import Insercion
-from ejercicios.topologica import Topologica
+from clases.insercion import *
+from clases.topologia import *
 
 if __name__ == "__main__":
 
