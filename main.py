@@ -1,6 +1,7 @@
 from clases.insercion import *
 from clases.topologia import *
 
+
 if __name__ == "__main__":
 
     print("Ordenación por inserción")
