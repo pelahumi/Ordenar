@@ -97,3 +97,4 @@ def solicitar_introducir_casilla(invite):
         else:
             # Todos los carácters se han probado y son letras.
             return datoIntroducido.upper()
+        
