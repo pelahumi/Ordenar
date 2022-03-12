@@ -1,32 +1,34 @@
-#Creamos la clase
+from collections import defaultdict
 
+#Creamos la clase
 class Topologica():
     pass #ponemos un pass porque definiremos luego los atributos de la clase
 
     #Definimos el constructor
-    def __init__(self, vertices):
-        self.vertices = vertices
-        self.tarea = []
+    def __init__(self, v):
+        self.v = v
+        self.tarea = defaultdict(list)
 
-    def añadir(self, vertice, importancia):
-        self.tarea[vertice].append(importancia)
+    def añadir(self, index, vertice):
+        self.tarea[index].append(vertice)
 
-    def ordenar(self, v, lista, resultado):
-        lista.append(v)
+    def ordenar(self, vertice, lista, resultado):
 
-        for i in self.vertices[v]:
-            if i not in lista:
+        lista[vertice] = True
+
+        for i in self.tarea[vertice]:
+            if lista[i] == False:
                 self.ordenar(i, lista, resultado)
         
-        resultado.insert(0, v)
+        resultado.append(vertice)
 
     def ordenacion_topologica(self):
-        lista = []
+        lista = [False] * self.v
         resultado = []
 
-        for j in list(self.vertices):
-            if j not in lista:
-                self.ordenar(j, lista, resultado)
+        for i in range(self.v):
+            if lista[i] == False:
+                self.ordenar(i, lista, resultado)
         
         return "El resultado es: {}".format(resultado)
 
@@ -38,8 +40,7 @@ if __name__ == "__main__":
     tarea.añadir(2, 3)
     tarea.añadir(0, 2)
 
-    tarea.ordenacion_topologica()
-
+    print(tarea.ordenacion_topologica())
             
 
 
