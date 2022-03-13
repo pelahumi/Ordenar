@@ -31,7 +31,7 @@ class Insercion():
 
 ## Ejercicio ordenación topológica
 
-![Diagrama]
+![Diagrama](https://github.com/pelahumi/Ordenar/blob/main/Diagramas_flujo/Captura%20de%20pantalla%202022-03-13%20a%20las%2018.42.35.png)
 
 ```python3
 from collections import defaultdict
