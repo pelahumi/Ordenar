@@ -1,5 +1,7 @@
+from clases.especificaciones import Segmento
 from clases.insercion import *
 from clases.topologia import *
+from clases.especificaciones import * 
 
 
 if __name__ == "__main__":
@@ -18,5 +20,14 @@ if __name__ == "__main__":
     tarea.añadir(2, 3)
     tarea.añadir(0, 2)
     print(tarea.ordenacion_topologica())
+
+    print("Especificaciones")
+    array = [13, 4, -3, 8, 9, 10, 7]
+    exploracion = Segmento(array)
+    print("El array a segmentar es el siguiente: ",array)
+    print(exploracion.especificaciones())
+    print(exploracion.explorar(exploracion.especificaciones()))
+
+
 
 

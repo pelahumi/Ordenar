@@ -22,6 +22,7 @@ class Segmento():
                     seg2 = []
 
                     # Este bucle hace lo mismo que el anterior pero con un rango distinto
+
                     for j in range(i + 2, len(self.tabla) - 1):
 
                         if self.tabla[j] >= self.tabla[j + 1]:
@@ -32,14 +33,16 @@ class Segmento():
             
             else:
                 pass
+            
+        return "Segmentado: {}, {}".format(seg, seg2)
 
-# Método que aplica las especificaciones del enunciado
-def explorar(self, lista):
+    # Método que aplica las especificaciones del enunciado
+    def explorar(self, lista):
 
-    # Copia de seguridad
-    mi = lista[0]
+        # Copia de seguridad
+        mi = lista[0]
 
-    # Mover los elementos un lugar a la izquierda
-    lista = lista[1:] + lista[:1]
+        # Mover los elementos un lugar a la izquierda
+        lista = lista[1:] + lista[:1]
 
-    return lista
+        return "Aplicando las especificaciones: {}".format(lista)
