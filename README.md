@@ -81,7 +81,7 @@ class Topologica():
 
 ## Ejercicio especificaciones
 
-![Diagrama](
+![Diagrama](https://github.com/pelahumi/Ordenar/blob/main/Diagramas_flujo/Captura%20de%20pantalla%202022-03-13%20a%20las%2019.00.12.png)
 
 ```python3
 #Creamos la clase
