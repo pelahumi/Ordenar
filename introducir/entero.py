@@ -46,3 +46,4 @@ def solicitar_introducir_numero_extremo(invite, minimum=MIN, maximum=MAX):
             # Tenemos lo que queremos, salimos del bucle saliendo de la función
             return datoIntroducido
 
+
